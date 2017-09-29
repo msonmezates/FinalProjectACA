@@ -1,5 +1,6 @@
 import React, { Component }from 'react';
 import styles from '../styles/index.css';
+import MemeDetail from './MemeDetail';
 
 class ListOfMemes extends Component {
   constructor() {
@@ -20,7 +21,7 @@ class ListOfMemes extends Component {
   render() {
     const memeDivs = this.props.memes.slice(0, this.state.memeLimit).map((meme, index) => {
       return (
-        <h4 key={index}>{meme.name}</h4>
+        <MemeDetail key={index} meme={meme} />
       );
     });
     return (
