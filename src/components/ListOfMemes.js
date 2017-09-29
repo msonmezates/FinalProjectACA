@@ -1,4 +1,5 @@
 import React, { Component }from 'react';
+import styles from '../styles/index.css';
 
 class ListOfMemes extends Component {
   constructor() {
@@ -27,7 +28,12 @@ class ListOfMemes extends Component {
         <div>
           {memeDivs}
         </div>
-        <div onClick={this.handleMemeLimit}>Load 10 more memes...</div>
+        <div
+          className="meme-button"
+          onClick={this.handleMemeLimit}
+        >
+          Load 10 more memes...
+        </div>
       </div>
     );
   }
