@@ -1,15 +1,33 @@
 import React, { Component }from 'react';
 
 class ListOfMemes extends Component {
+  constructor() {
+    super();
+
+    this.state ={
+      memeLimit: 10
+    };
+  }
+
+  handleMemeLimit = () => {
+    this.setState(prevState => {
+      return {
+        memeLimit: prevState.memeLimit+10
+      }
+    });
+  }
   render() {
-    const memeDivs = this.props.memes.map((meme, index) => {
+    const memeDivs = this.props.memes.slice(0, this.state.memeLimit).map((meme, index) => {
       return (
         <h4 key={index}>{meme.name}</h4>
       );
     });
     return (
       <div>
-        {memeDivs}
+        <div>
+          {memeDivs}
+        </div>
+        <div onClick={this.handleMemeLimit}>Load 10 more memes...</div>
       </div>
     );
   }
