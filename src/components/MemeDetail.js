@@ -3,13 +3,14 @@ import React, { Component } from 'react';
 class MemeDetail extends Component{
   render() {
     return (
-      <div>
+      <div className="meme-item">
         <img
+          className="meme-img"
           src={this.props.meme.url}
           alt={this.props.meme.name}
         />
 
-        <p>
+      <p className="meme-text">
           {this.props.meme.name}
         </p>
       </div>
