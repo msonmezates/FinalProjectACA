@@ -1,5 +1,5 @@
 import React, { Component }from 'react';
-import styles from '../styles/index.css';
+import '../styles/index.css';
 import MemeDetail from './MemeDetail';
 
 class ListOfMemes extends Component {
