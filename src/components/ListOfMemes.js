@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { Component }from 'react';
 
-function ListOfMemes(props) {
-  const memeDivs = props.memes.map((meme, index) => {
+class ListOfMemes extends Component {
+  render() {
+    const memeDivs = this.props.memes.map((meme, index) => {
+      return (
+        <h4 key={index}>{meme.name}</h4>
+      );
+    });
     return (
-      <h4 key={index}>{meme.name}</h4>
+      <div>
+        {memeDivs}
+      </div>
     );
-  });
-  return (
-    <div>
-      {memeDivs}
-    </div>
-  );
+  }
 }
 
 export default ListOfMemes;
