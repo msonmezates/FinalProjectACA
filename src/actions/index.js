@@ -1,3 +1,5 @@
+import { username, password } from './secrets';
+
 export function receiveMemes(json) {
   const { memes } = json.data;
 
@@ -24,4 +26,8 @@ export function newMeme(meme) { //create your own meme
     type: 'NEW_MEME',
     value: meme
   };
+}
+
+export function postMemeJson(params) {
+
 }
