@@ -34,6 +34,16 @@ body {
           filter: brightness(90%);
 }
 
+.darken-img {
+  background-color: grey;
+  -webkit-filter: brightness(10%);
+          filter: brightness(10%);
+  -webkit-animation-name: darken;
+          animation-name: darken;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
 .meme-text {
   width: 150px;
   -webkit-box-align: center;
@@ -42,4 +52,33 @@ body {
   position: absolute;
   border-radius: 5px;
   bottom: 0;
+  -webkit-animation-name: fade-in;
+          animation-name: fade-in;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  font-size: 14px;
+}
+
+.meme-no-text {
+  display: none;
+}
+
+@-webkit-keyframes darken {
+  from {-webkit-filter: brightness(90%);filter: brightness(90%)};
+  to {-webkit-filter: brightness(10%);filter: brightness(10%)};
+}
+
+@keyframes darken {
+  from {-webkit-filter: brightness(90%);filter: brightness(90%)};
+  to {-webkit-filter: brightness(10%);filter: brightness(10%)};
+}
+
+@-webkit-keyframes fade-in {
+  from { opacity: 0 };
+  to { opacity: 100};
+}
+
+@keyframes fade-in {
+  from { opacity: 0 };
+  to { opacity: 100};
 }

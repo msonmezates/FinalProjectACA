@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppContainer from './containers/AppContainer';
 
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 
