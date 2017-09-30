@@ -23,5 +23,5 @@ export function newMeme(meme) { //create your own meme
   return {
     type: 'NEW_MEME',
     value: meme
-  }
+  };
 }

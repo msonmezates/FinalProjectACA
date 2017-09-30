@@ -10,7 +10,17 @@ class MemeDetail extends Component{
     };
   }
 
-  postMeme = () => console.log('this.props', this.props);
+  postMeme = () => { //display your own meme
+    const { text0, text1 } = this.props;
+
+    const memeObj = { //create new meme
+      text0,
+      text1,
+      template_id: this.props.meme.id
+    };
+
+    this.props.newMeme(memeObj); //pass it in to trigger action
+  }
 
   render() {
     return (

@@ -1,6 +1,6 @@
 import React, { Component }from 'react';
 import '../styles/index.css';
-import MemeDetail from './MemeDetail';
+import MemeDetailContainer from '../containers/MemeDetailContainer';
 import { Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 class ListOfMemes extends Component {
@@ -28,7 +28,7 @@ class ListOfMemes extends Component {
 
     const memeDivs = this.props.memes.slice(0, this.state.memeLimit).map((meme, index) => {
       return (
-        <MemeDetail
+        <MemeDetailContainer
           key={index}
           meme={meme}
           text0={this.state.text0}
