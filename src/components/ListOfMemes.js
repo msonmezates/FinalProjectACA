@@ -1,6 +1,7 @@
 import React, { Component }from 'react';
 import '../styles/index.css';
 import MemeDetailContainer from '../containers/MemeDetailContainer';
+import MyMemesContainer from '../containers/MyMemesContainer';
 import { Form, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 class ListOfMemes extends Component {
@@ -37,6 +38,7 @@ class ListOfMemes extends Component {
     return (
       <div>
         <h4><i>Write Some Text...</i></h4>
+        <MyMemesContainer />
         <Form inline>
           <FormGroup>
             <ControlLabel>Top</ControlLabel>
