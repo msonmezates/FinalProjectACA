@@ -19,7 +19,7 @@ class MemeDetail extends Component{
       template_id: this.props.meme.id
     };
 
-    this.props.newMeme(memeObj); //pass it in to trigger action
+    this.props.createMeme(memeObj); //pass it in to trigger action
   }
 
   render() {

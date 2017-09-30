@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
 import MemeDetail from '../components/MemeDetail';
-import { newMeme } from '../actions';
+import { createMeme } from '../actions';
 
-export default connect(null, { newMeme })(MemeDetail);
+export default connect(null, { createMeme })(MemeDetail);
