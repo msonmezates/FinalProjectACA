@@ -18,3 +18,10 @@ export function fetchMemes() { //this function avoids asynchronous behavior
       .then(json => dispatch(receiveMemes(json)))
   }
 }
+
+export function newMeme(meme) { //create your own meme
+  return {
+    type: 'NEW_MEME',
+    value: meme
+  }
+}
