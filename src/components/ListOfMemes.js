@@ -28,6 +28,23 @@ class ListOfMemes extends Component {
     return (
       <div>
         <h4><i>Write Some Text...</i></h4>
+        <Form inline>
+          <FormGroup>
+            <ControlLabel>Top</ControlLabel>
+            {' '}
+            <FormControl
+              type="text"
+            />
+          </FormGroup>
+          {' '}
+          <FormGroup>
+            <ControlLabel>Bottom</ControlLabel>
+            {' '}
+            <FormControl
+              type="text"
+            />
+          </FormGroup>
+        </Form>
         <div>
           {memeDivs}
         </div>
