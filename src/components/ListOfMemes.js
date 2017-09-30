@@ -8,18 +8,24 @@ class ListOfMemes extends Component {
     super();
 
     this.state ={
-      memeLimit: 10
+      memeLimit: 10,
+      text0: '', //top text
+      text1: '' //bottom text
     };
   }
 
   handleMemeLimit = () => {
     this.setState(prevState => {
       return {
-        memeLimit: prevState.memeLimit+10
+        memeLimit: prevState.memeLimit+10 //show 10 more items each item clicked
       }
     });
   }
+
   render() {
+    console.log(this.state.text0); //testing setState
+    console.log(this.state.text1);
+
     const memeDivs = this.props.memes.slice(0, this.state.memeLimit).map((meme, index) => {
       return (
         <MemeDetail key={index} meme={meme} />
@@ -34,6 +40,7 @@ class ListOfMemes extends Component {
             {' '}
             <FormControl
               type="text"
+              onChange={e => this.setState({text0: e.target.value})}
             />
           </FormGroup>
           {' '}
@@ -42,6 +49,7 @@ class ListOfMemes extends Component {
             {' '}
             <FormControl
               type="text"
+              onChange={e => this.setState({text1: e.target.value})}
             />
           </FormGroup>
         </Form>
