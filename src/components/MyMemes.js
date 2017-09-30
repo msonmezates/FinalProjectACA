@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../styles/index.css';
 
 class MyMemes extends Component {
 
@@ -12,6 +13,7 @@ class MyMemes extends Component {
                 key={index}
                 src={meme.data.url}
                 alt="my-personal-meme"
+                className="my-meme-img"
               />
             );
           })
