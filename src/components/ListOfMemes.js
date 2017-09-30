@@ -23,8 +23,6 @@ class ListOfMemes extends Component {
   }
 
   render() {
-    console.log(this.state.text0); //testing setState
-    console.log(this.state.text1);
 
     const memeDivs = this.props.memes.slice(0, this.state.memeLimit).map((meme, index) => {
       return (

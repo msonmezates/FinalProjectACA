@@ -29,5 +29,12 @@ export function newMeme(meme) { //create your own meme
 }
 
 export function postMemeJson(params) {
+  params["username"] = username;
+  params["password"] = password;
 
+  const bodyParams = Object.keys(params).map(key => {
+    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
+  }).join('&');
+
+  console.log('bodyParams', bodyParams);
 }
