@@ -5,7 +5,17 @@ class MyMemes extends Component {
   render() {
     return (
       <div>
-        My Memes Component
+        {
+          this.props.myOwnMemes.map((meme, index) => {
+            return (
+              <img
+                key={index}
+                src={meme.data.url}
+                alt="my-personal-meme"
+              />
+            );
+          })
+        }
       </div>
     );
   }
