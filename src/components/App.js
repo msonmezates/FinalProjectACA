@@ -4,7 +4,7 @@ import ListOfMemesContainer from '../containers/ListOfMemesContainer';
 function App() {
   return (
     <div>
-      <h2>Meme Generator</h2>
+      <h2><u>Meme Generator</u></h2>
       <ListOfMemesContainer />
     </div>
   );
