@@ -9,12 +9,16 @@ class MemeDetail extends Component{
       hover: false
     };
   }
+
+  postMeme = () => console.log('this.props', this.props);
+
   render() {
     return (
       <div
         className="meme-item"
         onMouseEnter={() => this.setState({ hovered: true })}
         onMouseLeave={() => this.setState({ hovered: false })}
+        onClick={() => this.postMeme()}
       >
         <img
           className={this.state.hovered ? "meme-img darken-img" : "meme-img"}

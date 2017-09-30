@@ -28,7 +28,12 @@ class ListOfMemes extends Component {
 
     const memeDivs = this.props.memes.slice(0, this.state.memeLimit).map((meme, index) => {
       return (
-        <MemeDetail key={index} meme={meme} />
+        <MemeDetail
+          key={index}
+          meme={meme}
+          text0={this.state.text0}
+          text1={this.state.text1}
+        />
       );
     });
     return (
