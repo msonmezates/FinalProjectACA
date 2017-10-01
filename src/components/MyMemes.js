@@ -10,9 +10,12 @@ class MyMemes extends Component {
         {
           this.props.myOwnMemes.map((meme, index) => {
             return (
-              <div style={{display: 'inline-block'}}>
+              <div
+                style={{display: 'inline-block'}}
+                key={index}
+              >
                 <img
-                  key={index}
+
                   src={meme.data.url}
                   alt="my-personal-meme"
                   className="my-meme-img"
