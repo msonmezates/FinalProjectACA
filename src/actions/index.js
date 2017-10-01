@@ -64,11 +64,10 @@ export function deleteMeme(params) {
   }).join('&');
 
   return function(dispatch) {
-    fetch('https://api.imgflip.com/caption_image' + params, {
+    fetch('https://api.imgflip.com/caption_image', {
       method: 'DELETE',
-      body: bodyParams(params)
+      body: bodyParams
     })
-      .then(response => response.json())
-        .then(() => dispatch(createMeme()));
+      .then(response => response.json());
   }
 }
