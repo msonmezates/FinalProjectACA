@@ -4,6 +4,10 @@ import { Button } from 'react-bootstrap';
 
 class MyMemes extends Component {
 
+  handleDeleteBtn = () => {
+    this.props.deleteMyMeme();
+  }
+
   render() {
     return (
       <div>
@@ -21,7 +25,12 @@ class MyMemes extends Component {
                   className="my-meme-img"
                 />
               <div>
-                  <Button className="btn btn-danger delete-btn">DELETE</Button>
+                  <Button
+                    className="btn btn-danger delete-btn"
+                    onClick={this.handleDeleteBtn}
+                  >
+                    DELETE
+                  </Button>
                 </div>
               </div>
             );
