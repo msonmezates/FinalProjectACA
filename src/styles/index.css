@@ -35,8 +35,9 @@ body {
 }
 
 .my-meme-img {
-  position: relative;
-  display: inline-block;
+  /*position: relative;*/
+  /*display: inline-block;*/
+  float: left;
   margin: 5px;
   width: 220px;
   border-radius: 4px;
@@ -70,6 +71,12 @@ body {
 
 .meme-no-text {
   display: none;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  margin-bottom: 10px;
 }
 
 @-webkit-keyframes darken {
