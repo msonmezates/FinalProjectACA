@@ -18,7 +18,7 @@ class MyMemes extends Component {
                   className="my-meme-img"
                 />
               <div>
-                  <Button className="delete-btn">DELETE</Button>
+                  <Button className="btn btn-danger delete-btn">DELETE</Button>
                 </div>
               </div>
             );
