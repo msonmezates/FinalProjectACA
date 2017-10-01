@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap';
 class MyMemes extends Component {
 
   handleDeleteBtn = () => {
-    this.props.deleteMyMeme();
+    this.props.deleteMeme(this.props.params.username);
   }
 
   render() {

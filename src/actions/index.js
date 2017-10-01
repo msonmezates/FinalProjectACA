@@ -54,3 +54,21 @@ export function createMeme(new_meme_object) {
       .then(new_meme => dispatch(newMeme(new_meme)));
   }
 }
+
+export function deleteMeme(params) {
+  params["username"] = username;
+  params["password"] = password;
+
+  const bodyParams = Object.keys(params).map(key => {
+    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
+  }).join('&');
+
+  return function(dispatch) {
+    fetch('https://api.imgflip.com/caption_image' + params, {
+      method: 'DELETE',
+      body: bodyParams(params)
+    })
+      .then(response => response.json())
+        .then(() => dispatch(createMeme()));
+  }
+}
