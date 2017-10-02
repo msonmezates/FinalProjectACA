@@ -3,14 +3,8 @@ import ReactDOM from 'react-dom';
 import AppContainer from './containers/AppContainer';
 
 import { Provider } from 'react-redux';
-import configureStore from './store';
+import store from './store';
 
-
-import { fetchMemes } from './actions';
-
-const store = configureStore();
-store.subscribe(() => console.log('store', store.getState()));
-store.dispatch(fetchMemes());
 
 ReactDOM.render(
   <Provider store={store}>
