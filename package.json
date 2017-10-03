@@ -6,6 +6,7 @@
     "body-parser": "^1.18.2",
     "bootstrap": "4",
     "express": "^4.16.1",
+    "nodeman": "^1.1.2",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.2",
     "react-dom": "^15.6.1",
