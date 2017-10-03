@@ -19,7 +19,6 @@ class MyMemes extends Component {
                 key={index}
               >
                 <img
-
                   src={meme.data.url}
                   alt="my-personal-meme"
                   className="my-meme-img"

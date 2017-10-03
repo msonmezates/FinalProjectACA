@@ -56,6 +56,8 @@ export function createMeme(new_meme_object) {
 }
 
 export function deleteMeme(params) {
+  console.log(params);
+
   params["username"] = username;
   params["password"] = password;
 
