@@ -11,7 +11,8 @@ class ListOfMemes extends Component {
     this.state ={
       memeLimit: 10,
       text0: '', //top text
-      text1: '' //bottom text
+      text1: '', //bottom text,
+      searchMeme: '' //search for a name
     };
   }
 
@@ -23,7 +24,10 @@ class ListOfMemes extends Component {
     });
   }
 
+  handleSearchBox = e => this.setState({searchMeme: e.target.value});
+
   render() {
+    console.log(this.state.searchMeme);
 
     const memeDivs = this.props.memes.slice(0, this.state.memeLimit).map((meme, index) => {
       return (
@@ -58,9 +62,11 @@ class ListOfMemes extends Component {
             />
           </FormGroup>
         </Form>
+        <input label="Type any name" onChange={this.handleSearchBox} />
         <div>
           {memeDivs}
         </div>
+
         <div
           className="meme-button"
           onClick={this.handleMemeLimit}
