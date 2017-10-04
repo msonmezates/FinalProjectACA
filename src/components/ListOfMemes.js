@@ -27,9 +27,15 @@ class ListOfMemes extends Component {
   handleSearchBox = e => this.setState({searchMeme: e.target.value});
 
   render() {
-    console.log(this.state.searchMeme);
 
-    const memeDivs = this.props.memes.slice(0, this.state.memeLimit).map((meme, index) => {
+    const filterMemes = this.props.memes.filter(meme => {
+      if(this.state.searchMeme === "") {
+        return true;
+      }
+      return meme.name.indexOf(this.state.searchMeme) > -1;
+    });
+
+    const memeDivs = filterMemes.slice(0, this.state.memeLimit).map((meme, index) => {
       return (
         <MemeDetailContainer
           key={index}
@@ -61,8 +67,15 @@ class ListOfMemes extends Component {
               onChange={e => this.setState({text1: e.target.value})}
             />
           </FormGroup>
+          <FormGroup>
+            <ControlLabel>Search</ControlLabel>
+            {' '}
+            <FormControl
+              type="text"
+              onChange={this.handleSearchBox}
+            />
+          </FormGroup>
         </Form>
-        <input label="Type any name" onChange={this.handleSearchBox} />
         <div>
           {memeDivs}
         </div>
