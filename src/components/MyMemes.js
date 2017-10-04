@@ -18,7 +18,17 @@ class MyMemes extends Component {
                   alt="my-personal-meme"
                   className="my-meme-img"
                 />
+                <div id="download">
+                  <a
+                    class="button"
+                    href={meme.data.url}
+                    download="google.png"
+                  >
+                    Download image
+                  </a>
+                </div>
               </div>
+
             );
           })
         }

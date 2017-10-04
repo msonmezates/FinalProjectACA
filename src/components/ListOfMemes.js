@@ -24,8 +24,6 @@ class ListOfMemes extends Component {
     });
   }
 
-  handleSearchBox = e => this.setState({searchMeme: e.target.value});
-
   render() {
 
     const filterMemes = this.props.memes.filter(meme => {
@@ -72,10 +70,11 @@ class ListOfMemes extends Component {
             {' '}
             <FormControl
               type="text"
-              onChange={this.handleSearchBox}
+              onChange={e => this.setState({searchMeme: e.target.value})}
             />
           </FormGroup>
         </Form>
+
         <div>
           {memeDivs}
         </div>
