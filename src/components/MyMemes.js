@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/index.css';
-import { Button } from 'react-bootstrap';
 
 class MyMemes extends Component {
-
-  handleDeleteBtn = () => {
-    this.props.deleteMeme();
-  }
 
   render() {
     return (
@@ -23,14 +18,6 @@ class MyMemes extends Component {
                   alt="my-personal-meme"
                   className="my-meme-img"
                 />
-              <div>
-                  <Button
-                    className="btn btn-danger delete-btn"
-                    onClick={this.handleDeleteBtn}
-                  >
-                    DELETE
-                  </Button>
-                </div>
               </div>
             );
           })
