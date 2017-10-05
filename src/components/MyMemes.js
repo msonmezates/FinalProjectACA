@@ -14,14 +14,14 @@ class MyMemes extends Component {
                 key={index}
               >
                 <img
-                  src={meme.data.url}
+                  src={meme.url}
                   alt="my-personal-meme"
                   className="my-meme-img"
                 />
                 <div>
                   <a
                     className="download-btn"
-                    href={meme.data.url}
+                    href={meme.url}
                     download="google.png"
                   >
                     Download Your Meme

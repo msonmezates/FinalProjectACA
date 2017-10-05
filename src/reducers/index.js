@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 
 function memes(state = [], action) {
   switch(action.type) {
-    case 'RECEIVE_MEMES':
+    case 'MEMES_LOADED':
       return action.value;
     default:
       return state;
