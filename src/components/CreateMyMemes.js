@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/index.css';
 
-class MyMemes extends Component {
+class CreateMyMemes extends Component {
 
   render() {
     return (
@@ -37,4 +37,4 @@ class MyMemes extends Component {
   }
 }
 
-export default MyMemes;
+export default CreateMyMemes;

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import MyMemes from '../components/MyMemes';
+import CreateMyMemes from '../components/CreateMyMemes';
 import { deleteMeme } from '../actions';
 
 function mapStateToProps(state) {
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, { deleteMeme })(MyMemes);
+export default connect(mapStateToProps, { deleteMeme })(CreateMyMemes);
