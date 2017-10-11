@@ -7,7 +7,7 @@ function mapStateToProps(state) {
     myOwnMemes: state.myOwnMemes
   };
 }
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     deleteMeme: () => dispatch(deleteMeme()),
   }
