@@ -1,14 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import AppContainer from './containers/AppContainer';
+const express = require('express');
 
-import { Provider } from 'react-redux';
-import store from './store';
+const app = express();
 
+const port = process.env.PORT || 3001;
 
-ReactDOM.render(
-  <Provider store={store}>
-    <AppContainer />
-  </Provider>,
-  document.getElementById('root')
-);
+app.get('/', function (req, res) {
+  return res.json({ hello: 'world' });
+});
+
+app.post('/', function(req, res) {
+  return res.json({ hello: 'post world' });
+});
+
+app.listen(port, function () {
+  console.log(`Listening on port: ${port}`)
+});
