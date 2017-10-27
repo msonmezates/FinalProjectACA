@@ -1,10 +1,17 @@
 const express = require('express');
+
 const app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
+const port = process.env.PORT || 3001;
 
-app.listen(3001, function () {
-  console.log('Example app listening on port 3001!')
-})
+app.get('/', function (req, res) {
+  return res.json({ hello: 'world' });
+});
+
+app.post('/', function(req, res) {
+  return res.json({ hello: 'post world' });
+});
+
+app.listen(port, function () {
+  console.log(`Listening on port: ${port}`)
+});
