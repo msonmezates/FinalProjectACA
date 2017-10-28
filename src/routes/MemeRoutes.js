@@ -1,4 +1,5 @@
 const express = require('express');
+const { list, show, create, remove } = require('../controller/MemesController');
 
 const router = express.Router();
 
