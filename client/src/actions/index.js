@@ -40,5 +40,14 @@ export function createMeme(meme) {
 }
 
 export function deleteMeme(params) {
-  console.log(params);
+  return function(dispatch) {
+    fetch("/memes/" + id, {
+      method: "DELETE",
+      body: JSON.stringify(id)
+    })
+    .then(response => {
+      return response.json();
+    })
+    .then(() => dispatch(loadMemes()));
+  }
 }
