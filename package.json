@@ -2,6 +2,10 @@
   "name": "finalproject_aca",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "npm": "6.2.0",
+    "node": "9.4.0"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "bootstrap": "4",
