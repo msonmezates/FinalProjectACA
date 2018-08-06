@@ -1,24 +1,22 @@
-import { username, password } from './secrets';
-
-function receiveMemes(json) {
-  const { memes } = json.data;
-
+export function loadMemes() {
+  return function(dispatch) {
+    dispatch({
+      type: "LOAD_MEMES"
+    });
+    fetch("/memes")
+    .then(response => {
+      return response.json();
+    })
+    .then(memes => {
+      dispatch(memesLoaded(memes));
+    });
+  }
+}
+export function memesLoaded(memes) {
   return {
-    type: 'RECEIVE_MEMES',
+    type: "MEMES_LOADED",
     value: memes
   };
-}
-
-function  fetchMemesJson() { //access memes in json format
-  return fetch('https://api.imgflip.com/get_memes')
-    .then(response => response.json())
-}
-
-export function fetchMemes() { //this function avoids asynchronous behavior
-  return function(dispatch) {
-    return fetchMemesJson()
-      .then(json => dispatch(receiveMemes(json)))
-  }
 }
 
 function newMeme(meme) { //create your own meme
@@ -28,48 +26,28 @@ function newMeme(meme) { //create your own meme
   };
 }
 
-function postMemeJson(params) {
-  params["username"] = username;
-  params["password"] = password;
-
-  const bodyParams = Object.keys(params).map(key => {
-    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
-  }).join('&');
-
-  // console.log('bodyParams', bodyParams);
-
-  return fetch('https://api.imgflip.com/caption_image', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    body: bodyParams
-  })
-    .then(response => response.json());
-}
-
-export function createMeme(new_meme_object) {
+export function createMeme(meme) {
   return function(dispatch) {
-    return postMemeJson(new_meme_object)
-      .then(new_meme => dispatch(newMeme(new_meme)));
+    fetch("/memes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(meme)
+    })
+    .then(meme => dispatch(newMeme(meme)));
   }
 }
 
 export function deleteMeme(params) {
-  console.log(params);
-
-  params["username"] = username;
-  params["password"] = password;
-
-  const bodyParams = Object.keys(params).map(key => {
-    return encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
-  }).join('&');
-
   return function(dispatch) {
-    fetch('https://api.imgflip.com/caption_image', {
-      method: 'DELETE',
-      body: bodyParams
+    fetch("/memes/" + id, {
+      method: "DELETE",
+      body: JSON.stringify(id)
     })
-      .then(response => response.json());
+    .then(response => {
+      return response.json();
+    })
+    .then(() => dispatch(loadMemes()));
   }
 }
